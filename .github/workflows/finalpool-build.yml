@@ -1,0 +1,22 @@
+name: Build finalpool
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: finalpool
+      - name: Assemble finalpool
+        run: python scripts/build_finalpool.py
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tasks/finalpool
+          git commit -m "Add implemented tasks to tasks/finalpool [skip ci]" || echo "no changes"
+          git push origin finalpool
