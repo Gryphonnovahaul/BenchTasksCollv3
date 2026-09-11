@@ -1,0 +1,1 @@
+Track and compare prices of products across different stores.

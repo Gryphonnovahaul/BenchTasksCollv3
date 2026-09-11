@@ -1,0 +1,1 @@
+Manage and apply coupons to orders.

@@ -1,0 +1,1 @@
+Calculate the final price after applying a discount to a product.
